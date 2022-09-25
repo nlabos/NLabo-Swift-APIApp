@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0493B75428E00A7F0067909B /* OkashiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493B75328E00A7F0067909B /* OkashiViewController.swift */; };
 		04E2103328DEBB9D001B5348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2103228DEBB9D001B5348 /* AppDelegate.swift */; };
 		04E2103528DEBB9D001B5348 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2103428DEBB9D001B5348 /* SceneDelegate.swift */; };
 		04E2103728DEBB9D001B5348 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2103628DEBB9D001B5348 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0493B75328E00A7F0067909B /* OkashiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkashiViewController.swift; sourceTree = "<group>"; };
 		04E2102F28DEBB9D001B5348 /* NewsSweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsSweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E2103228DEBB9D001B5348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E2103428DEBB9D001B5348 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				04E2103228DEBB9D001B5348 /* AppDelegate.swift */,
 				04E2103428DEBB9D001B5348 /* SceneDelegate.swift */,
 				04E2103628DEBB9D001B5348 /* ViewController.swift */,
+				0493B75328E00A7F0067909B /* OkashiViewController.swift */,
 				04E2103828DEBB9D001B5348 /* Main.storyboard */,
 				04E2103B28DEBB9E001B5348 /* Assets.xcassets */,
 				04E2103D28DEBB9E001B5348 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				04E2103728DEBB9D001B5348 /* ViewController.swift in Sources */,
 				04E2103328DEBB9D001B5348 /* AppDelegate.swift in Sources */,
 				04E2103528DEBB9D001B5348 /* SceneDelegate.swift in Sources */,
+				0493B75428E00A7F0067909B /* OkashiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
