@@ -157,6 +157,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
         cell.textLabel?.numberOfLines = 0
         
         //ニュースの画像を取得
+        //実行すると紫色のエラーが発生するけど問題ないです
         if let imageData = try? Data(contentsOf: newsList[indexPath.row].urlToImage) {
             //正常に取得できた場合はUIImageで画像を生成してCellに画像を設定する
             cell.imageView?.image = UIImage(data: imageData)
