@@ -104,9 +104,12 @@ class OkashiViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         return okashiList.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "okashiCell", for: indexPath)
         cell.textLabel?.text = okashiList[indexPath.row].name
+        
+        //実行すると紫色のエラーが発生するけど問題ないです
         if let imageData = try? Data(contentsOf: okashiList[indexPath.row].image) {
             cell.imageView?.image = UIImage(data: imageData)
             
