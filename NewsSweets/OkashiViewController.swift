@@ -107,14 +107,22 @@ class OkashiViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "okashiCell", for: indexPath)
-        //実行すると紫色のエラーが発生するけど問題ないです。
         cell.textLabel?.text = okashiList[indexPath.row].name
         
-    
-        if let imageData = try? Data(contentsOf: okashiList[indexPath.row].image) {
-            cell.imageView?.image = UIImage(data: imageData)
-            
+        //実行すると紫色のエラーが発生するけど問題ないです。
+        //非同期処理で画像を取得する
+        DispatchQueue.global().async {
+            let image_url = self.okashiList[indexPath.row].image
+            if let imageData = try? Data(contentsOf: image_url) {
+                let image = UIImage(data: imageData)
+                DispatchQueue.main.async {
+                    cell.imageView?.image = image
+                    cell.setNeedsLayout()
+                }
+            }
+        
         }
+        
         return cell
     }
     
