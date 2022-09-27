@@ -36,7 +36,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
         //取得したレスポンス(終わったらコメント)
         //let totalResults: Int?
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -139,6 +139,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
         })
         //ダウンロード開始
         task.resume()
+        
     }
     //Cellの総数を返すdatasourceメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -157,15 +158,19 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
         cell.textLabel?.numberOfLines = 0
         
         //ニュースの画像を取得
-        //実行すると紫色のエラーが発生するけど問題ないです
-        if let imageData = try? Data(contentsOf: newsList[indexPath.row].urlToImage) {
-            //正常に取得できた場合はUIImageで画像を生成してCellに画像を設定する
-            cell.imageView?.image = UIImage(data: imageData)
+        DispatchQueue.global().async {
+            let image_url = self.newsList[indexPath.row].urlToImage
+            if let imageData = try? Data(contentsOf: image_url) {
+                let image = UIImage(data: imageData)
+                DispatchQueue.main.async {
+                    cell.imageView?.image = image
+                    cell.setNeedsLayout()
+                }
+            }
+            
         }
-        
         //設定済みのCellオブジェクトを反映
         return cell
-        
     }
     //セルの高さ上限
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -189,6 +194,6 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
         //safariviewを閉じる
         dismiss(animated: true, completion: nil)
     }
-
+    
 }
 
